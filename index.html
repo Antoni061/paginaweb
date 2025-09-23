@@ -134,15 +134,59 @@
             <div class="punto">
                 <h3>Nombre del Proyecto:</h3> <p><strong>App de Eventos</strong></p>
                 <h3>Visión del Proyecto:</h3> <p>La visión de este proyecto es crear una aplicación móvil que permita a los usuarios descubrir, registrarse y gestionar eventos de forma sencilla y eficiente, promoviendo la participación en la comunidad y la organización de actividades de interés.</p>
-                <h3>Integrantes del Equipo:</h3> <p>Eduardo Zapatero, Brayan Gonzales, Fernando Martinez, Gerardo Herandez</p>
+                <h3>Roles del Equipo:</h3>
+                <ul>
+                    <li><strong>Product Owner:</strong> Eduardo Zapatero</li>
+                    <li><strong>Scrum Master:</strong> Gerardo Hernandez</li>
+                    <li><strong>Scrum Team:</strong> Brayan Gonzales y Fernando Martinez</li>
+                </ul>
+            </div>
+            <div class="punto">
+                <h3>Planificación por Sprints</h3>
+                <p>El proyecto se dividió en **3 sprints** de dos semanas cada uno, con el objetivo de entregar un incremento de producto funcional al final de cada ciclo.</p>
+                
+                <h4>Sprint 1: Funcionalidad de Autenticación y Navegación (2 semanas)</h4>
+                <ul>
+                    <li><strong>Objetivo:</strong> Crear un prototipo funcional con el flujo de inicio de sesión y la navegación principal.</li>
+                    <li><strong>Historias de Usuario:</strong>
+                        <ul>
+                            <li>Como usuario, quiero poder crear una cuenta y acceder con mis credenciales.</li>
+                            <li>Como usuario, quiero ver una pantalla de inicio con un feed de eventos principales.</li>
+                            <li>Como usuario, quiero poder navegar entre las diferentes secciones de la app (Home, Perfil, Buscar).</li>
+                        </ul>
+                    </li>
+                </ul>
+        
+                <h4>Sprint 2: Búsqueda y Visualización de Eventos (2 semanas)</h4>
+                <ul>
+                    <li><strong>Objetivo:</strong> Implementar la funcionalidad de búsqueda y la visualización detallada de eventos.</li>
+                    <li><strong>Historias de Usuario:</strong>
+                        <ul>
+                            <li>Como usuario, quiero buscar eventos por nombre, categoría o fecha.</li>
+                            <li>Como usuario, quiero ver los detalles de un evento (descripción, ubicación, fecha, hora).</li>
+                            <li>Como usuario, quiero poder registrarme en un evento.</li>
+                        </ul>
+                    </li>
+                </ul>
+        
+                <h4>Sprint 3: Funcionalidades Avanzadas y Finalización (2 semanas)</h4>
+                <ul>
+                    <li><strong>Objetivo:</strong> Añadir funcionalidades extra y preparar la aplicación para su lanzamiento.</li>
+                    <li><strong>Historias de Usuario:</strong>
+                        <ul>
+                            <li>Como usuario, quiero guardar eventos en una lista de favoritos.</li>
+                            <li>Como usuario, quiero recibir notificaciones sobre eventos en los que estoy registrado.</li>
+                            <li>Como usuario, quiero crear mis propios eventos y compartirlos.</li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
             <div class="punto">
                 <h3>Tecnologías y Estrategias</h3>
                 <ul>
-                    <li><strong>Justificación de la Metodología:</strong> Scrum nos permitió gestionar los cambios en las funcionalidades de la aplicación, como la adición de nuevas categorías de eventos o sistemas de notificaciones, de manera eficiente en cada sprint.</li>
+                    <li><strong>Justificación de la Metodología:</strong> Scrum permitió a nuestro equipo gestionar los cambios en las funcionalidades de la aplicación de manera eficiente en cada sprint, asegurando que cada integrante del equipo (Brayan y Fernando) supiera exactamente qué tareas debía completar.</li>
                     <li><strong>Framework de Desarrollo:</strong> Desarrollado en <strong>React Native</strong> para asegurar la compatibilidad con dispositivos iOS y Android desde un único código base.</li>
                     <li><strong>Patrón de Diseño:</strong> Se usó el patrón <strong>MVC</strong> para mantener la lógica del negocio separada de la interfaz de usuario, facilitando el desarrollo en equipo.</li>
-                    <li><strong>Plan de Desarrollo:</strong> Se dividió en 3 sprints. El primero se enfocó en el diseño, la autenticación de usuarios y la navegación básica. El segundo en las funcionalidades de búsqueda, visualización y registro de eventos. El tercero en la adición de funcionalidades avanzadas como recordatorios y la creación de eventos por parte del usuario.</li>
                     <li><strong>Estrategias de Prueba:</strong> Se realizaron pruebas unitarias para cada componente (como el de autenticación o el de registro de eventos) y pruebas de integración para asegurar que la comunicación entre el front-end y la base de datos funcionara correctamente. También se llevaron a cabo pruebas manuales de la interfaz de usuario.</li>
                     <li><strong>Estrategias de Versionamiento:</strong> Se gestionó el código con <strong>Git y GitHub</strong>. Se crearon ramas para cada nueva funcionalidad para evitar conflictos y se realizaron `merges` al finalizar cada sprint.</li>
                 </ul>
