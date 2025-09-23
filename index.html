@@ -3,21 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Proyecto de Aplicación Móvil</title>
+    <title>Mi Proyecto de Aplicación Móvil de Eventos</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        header p {
+            margin: 0.5rem 0 0;
+            font-size: 1.2rem;
+        }
+        main {
+            padding: 2rem;
+            max-width: 900px;
+            margin: auto;
+        }
+        section {
+            background-color: #fff;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        section h2 {
+            color: #4CAF50;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 0.5rem;
+            margin-top: 0;
+        }
+        .punto {
+            margin-bottom: 1.5rem;
+        }
+        .punto h3 {
+            color: #555;
+            font-size: 1.3rem;
+            border-left: 4px solid #4CAF50;
+            padding-left: 10px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        ul li {
+            background: #e9f5e9;
+            margin-bottom: 0.5rem;
+            padding: 10px;
+            border-radius: 4px;
+        }
+        img.captura {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem auto;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        hr {
+            border: 0;
+            height: 1px;
+            background-color: #ddd;
+            margin: 2rem 0;
+        }
+        footer {
+            text-align: center;
+            padding: 1rem;
+            color: #777;
+            font-size: 0.9rem;
+            background-color: #eee;
+            border-top: 1px solid #ddd;
+        }
+    </style>
 </head>
 <body>
 
     <header>
         <h1>Plan y Desarrollo de Aplicación Móvil</h1>
-        <p>Presentación de mi proyecto final</p>
+        <p>Presentación de mi proyecto final: App de Eventos</p>
     </header>
 
     <main>
         <section id="metodologias">
             <h2>1. Metodologías Ágiles</h2>
-            <p><strong>Investigación y justificación:</strong> Para este proyecto, hemos utilizado <strong>Scrum</strong>, una metodología ágil que nos permitió adaptarnos a los cambios y entregar valor de forma continua. A diferencia de otras metodologías como Extreme Programming, Scrum se enfoca en la gestión del proyecto a través de iteraciones cortas (sprints).</p>
-            <p><strong>Arquitectura de software:</strong> La aplicación sigue un patrón de diseño <strong>MVC (Modelo-Vista-Controlador)</strong>. Esta arquitectura separa la lógica de la interfaz de usuario, lo que facilita el desarrollo y el mantenimiento del código.</p>
+            <p><strong>Investigación y justificación:</strong> Para este proyecto, hemos utilizado <strong>Scrum</strong>, una metodología ágil que nos permitió adaptarnos a los cambios y entregar valor de forma continua. A diferencia de otras metodologías como Extreme Programming, Scrum se enfoca en la gestión del proyecto a través de iteraciones cortas (sprints), lo cual fue crucial para un proyecto dinámico como una app de eventos.</p>
+            <p><strong>Arquitectura de software:</strong> La aplicación sigue un patrón de diseño <strong>MVC (Modelo-Vista-Controlador)</strong>. Esta arquitectura separa la lógica de la interfaz de usuario, lo que facilita el desarrollo y el mantenimiento del código, permitiendo a los diferentes integrantes del equipo trabajar en partes separadas sin generar conflictos.</p>
         </section>
 
         <section id="seleccion-metodologia">
@@ -32,15 +115,15 @@
             </div>
             <div class="punto">
                 <h3>¿Cuándo usar Scrum?</h3>
-                <p>Es ideal para proyectos con requisitos cambiantes o para equipos que necesitan un alto grado de flexibilidad.</p>
+                <p>Es ideal para proyectos con requisitos cambiantes o para equipos que necesitan un alto grado de flexibilidad. En una app de eventos, esto es clave ya que las funcionalidades pueden evolucionar rápidamente según el feedback de los usuarios y las tendencias del mercado.</p>
             </div>
             <div class="punto">
                 <h3>Diagrama de Scrum</h3>
-                <img src="/assets/Diagrama_Scrum.png" alt="Diagrama del flujo de trabajo de Scrum" style="max-width: 100%;">
+                <img src="assets/Diagrama_Scrum.png" alt="Diagrama del flujo de trabajo de Scrum" style="max-width: 100%;">
             </div>
             <div class="punto">
                 <h3>Ejemplos de Aplicaciones</h3>
-                <p>Aplicaciones como Spotify y Google utilizan principios ágiles para el desarrollo de sus productos.</p>
+                <p>Aplicaciones como Spotify y Google utilizan principios ágiles para el desarrollo de sus productos, al igual que muchas plataformas de gestión de eventos, que necesitan actualizarse constantemente con nuevas funcionalidades y mejoras.</p>
             </div>
         </section>
 
@@ -49,18 +132,18 @@
         <section id="plan-desarrollo">
             <h2>3. Plan de Desarrollo del Proyecto Móvil</h2>
             <div class="punto">
-                <h3>Nombre del Proyecto:</h3> <p><strong>App de Recetas Saludables</strong></p>
-                <h3>Visión del Proyecto:</h3> <p>La visión de este proyecto es crear una aplicación móvil que facilite a los usuarios encontrar y guardar recetas saludables, promoviendo un estilo de vida más consciente y nutritivo a través de una interfaz amigable y organizada.</p>
-                <h3>Integrantes del Equipo:</h3> <p>Antonio</p>
+                <h3>Nombre del Proyecto:</h3> <p><strong>App de Eventos</strong></p>
+                <h3>Visión del Proyecto:</h3> <p>La visión de este proyecto es crear una aplicación móvil que permita a los usuarios descubrir, registrarse y gestionar eventos de forma sencilla y eficiente, promoviendo la participación en la comunidad y la organización de actividades de interés.</p>
+                <h3>Integrantes del Equipo:</h3> <p>Eduardo Zapatero, Brayan Gonzales, Fernando Martinez, Gerardo Herandez</p>
             </div>
             <div class="punto">
                 <h3>Tecnologías y Estrategias</h3>
                 <ul>
-                    <li><strong>Justificación de la Metodología:</strong> Scrum nos permitió gestionar los cambios en las funcionalidades de la aplicación, como la adición de nuevas categorías de recetas o filtros de búsqueda, de manera eficiente en cada sprint.</li>
+                    <li><strong>Justificación de la Metodología:</strong> Scrum nos permitió gestionar los cambios en las funcionalidades de la aplicación, como la adición de nuevas categorías de eventos o sistemas de notificaciones, de manera eficiente en cada sprint.</li>
                     <li><strong>Framework de Desarrollo:</strong> Desarrollado en <strong>React Native</strong> para asegurar la compatibilidad con dispositivos iOS y Android desde un único código base.</li>
                     <li><strong>Patrón de Diseño:</strong> Se usó el patrón <strong>MVC</strong> para mantener la lógica del negocio separada de la interfaz de usuario, facilitando el desarrollo en equipo.</li>
-                    <li><strong>Plan de Desarrollo:</strong> Se dividió en 3 sprints. El primero se enfocó en el diseño y la navegación básica. El segundo en las funcionalidades de búsqueda y guardado de recetas. El tercero en la adición de funcionalidades avanzadas como la creación de listas de compras.</li>
-                    <li><strong>Estrategias de Prueba:</strong> Se realizaron pruebas unitarias para cada componente y pruebas de integración para asegurar que la comunicación entre el front-end y el back-end funcionara correctamente. También se llevaron a cabo pruebas manuales de la interfaz de usuario.</li>
+                    <li><strong>Plan de Desarrollo:</strong> Se dividió en 3 sprints. El primero se enfocó en el diseño, la autenticación de usuarios y la navegación básica. El segundo en las funcionalidades de búsqueda, visualización y registro de eventos. El tercero en la adición de funcionalidades avanzadas como recordatorios y la creación de eventos por parte del usuario.</li>
+                    <li><strong>Estrategias de Prueba:</strong> Se realizaron pruebas unitarias para cada componente (como el de autenticación o el de registro de eventos) y pruebas de integración para asegurar que la comunicación entre el front-end y la base de datos funcionara correctamente. También se llevaron a cabo pruebas manuales de la interfaz de usuario.</li>
                     <li><strong>Estrategias de Versionamiento:</strong> Se gestionó el código con <strong>Git y GitHub</strong>. Se crearon ramas para cada nueva funcionalidad para evitar conflictos y se realizaron `merges` al finalizar cada sprint.</li>
                 </ul>
             </div>
@@ -69,15 +152,15 @@
         <section id="desarrollo-app">
             <h2>4. Desarrollo de la Aplicación</h2>
             <div class="punto">
-                <h3>El objetivo:</h3> <p>El objetivo principal de la aplicación es proporcionar una herramienta simple y eficaz para que los usuarios puedan explorar, buscar y guardar recetas saludables, con la opción de filtrar por tipo de comida, ingredientes o tiempo de preparación.</p>
+                <h3>El objetivo:</h3> <p>El objetivo principal de la aplicación es proporcionar una herramienta simple y eficaz para que los usuarios puedan explorar, buscar, registrarse y gestionar eventos, con la opción de filtrar por tipo de evento, fecha o ubicación.</p>
             </div>
             <div class="punto">
-                <h3>Breve resumen del proceso:</h3> <p>El proceso de desarrollo comenzó con la ideación y un prototipo inicial. En el primer sprint, diseñamos la estructura de la app y la navegación principal. El segundo sprint se centró en la implementación de la base de datos de recetas y la funcionalidad de búsqueda. Finalmente, el tercer sprint se dedicó a pulir la interfaz, implementar la función de "guardar como favorito" y resolver los errores finales. El uso de Scrum nos permitió hacer un seguimiento constante del progreso y adaptarnos a las necesidades que surgieron durante el desarrollo.</p>
+                <h3>Breve resumen del proceso:</h3> <p>El proceso de desarrollo comenzó con la ideación y un prototipo inicial. En el primer sprint, diseñamos la estructura de la app y la navegación principal, incluyendo el flujo de inicio de sesión. El segundo sprint se centró en la implementación de la base de datos de eventos y la funcionalidad de búsqueda. Finalmente, el tercer sprint se dedicó a pulir la interfaz, implementar la función de "guardar en favoritos" y resolver los errores finales. El uso de Scrum nos permitió hacer un seguimiento constante del progreso y adaptarnos a las necesidades que surgieron durante el desarrollo.</p>
             </div>
             <div class="punto">
                 <h3>Pantallas de la Aplicación:</h3>
-                <img src="/assets/Imagen_1.png" alt="Pantalla de inicio de la aplicación" class="captura">
-                <img src="/assets/imagen_2.png" alt="Pantalla de la aplicación" class="captura">
+                <img src="assets/imagen_1.jpg" alt="Diagrama del flujo de trabajo de Scrum" style="max-width: 100%;">>
+                <img src="assets/imagen_3jpg.jpg" alt="Diagrama del flujo de trabajo de Scrum" style="max-width: 100%;">
             </div>
             <div class="punto">
                 <h3>Conclusión:</h3>
