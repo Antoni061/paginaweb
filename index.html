@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>InteliPOS - Punto de Venta Inteligente</title>
-    <link rel="stylesheet" href="style.css">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -14,25 +13,30 @@
             background-color: #f4f4f4;
             color: #333;
         }
+
         header {
             background-color: #4CAF50;
             color: white;
             padding: 1rem 0;
             text-align: center;
         }
+
         header h1 {
             margin: 0;
             font-size: 2.5rem;
         }
+
         header p {
             margin: 0.5rem 0 0;
             font-size: 1.2rem;
         }
+
         main {
             padding: 2rem;
-            max-width: 900px;
+            max-width: 1000px;
             margin: auto;
         }
+
         section {
             background-color: #fff;
             padding: 2rem;
@@ -40,31 +44,37 @@
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
+
         section h2 {
             color: #4CAF50;
             border-bottom: 2px solid #ddd;
             padding-bottom: 0.5rem;
             margin-top: 0;
         }
+
         .punto {
             margin-bottom: 1.5rem;
         }
+
         .punto h3 {
             color: #555;
             font-size: 1.3rem;
             border-left: 4px solid #4CAF50;
             padding-left: 10px;
         }
+
         ul {
             list-style-type: none;
             padding: 0;
         }
+
         ul li {
             background: #e9f5e9;
             margin-bottom: 0.5rem;
             padding: 10px;
             border-radius: 4px;
         }
+
         img.captura {
             max-width: 100%;
             height: auto;
@@ -73,12 +83,14 @@
             border: 1px solid #ddd;
             border-radius: 4px;
         }
+
         hr {
             border: 0;
             height: 1px;
             background-color: #ddd;
             margin: 2rem 0;
         }
+
         footer {
             text-align: center;
             padding: 1rem;
@@ -87,137 +99,189 @@
             background-color: #eee;
             border-top: 1px solid #ddd;
         }
+
+        /* --- Estilos para simulación de pantallas --- */
+        .pantalla {
+            margin-bottom: 2rem;
+        }
+
+        .mockup {
+            border: 2px dashed #4CAF50;
+            background-color: #f9fff9;
+            padding: 1rem;
+            border-radius: 8px;
+            position: relative;
+        }
+
+        .mockup p {
+            margin: 0.5rem 0;
+        }
+
+        .mockup::before {
+            content: "Pantalla";
+            position: absolute;
+            top: -12px;
+            left: 10px;
+            background: #4CAF50;
+            color: white;
+            padding: 2px 6px;
+            font-size: 0.8rem;
+            border-radius: 4px;
+        }
+
+        .flujo {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: space-between;
+        }
+
+        .flujo .mockup {
+            flex: 1 1 calc(48% - 1rem);
+        }
+
+        .boton {
+            display: inline-block;
+            padding: 6px 12px;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-right: 0.5rem;
+        }
+
+        .campo {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 6px;
+            border-radius: 4px;
+            display: block;
+            margin: 0.3rem 0;
+            width: 90%;
+        }
+
+        .titulo-pantalla {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>Plan y Desarrollo de Software de Punto de Venta</h1>
-        <p>Presentación de mi proyecto: "InteliPOS"</p>
-    </header>
+<header>
+    <h1>Plan y Desarrollo de Software de Punto de Venta</h1>
+    <p>Presentación de mi proyecto: "InteliPOS"</p>
+</header>
 
-    <main>
-        <section id="metodologias">
-            <h2>1. Metodologías Ágiles</h2>
-            <p><strong>Investigación y justificación:</strong> Para este proyecto, hemos utilizado <strong>Scrum</strong>, una metodología ágil que nos permitió adaptarnos a los cambios y entregar valor de forma continua. A diferencia de otras metodologías, Scrum se enfoca en la gestión del proyecto a través de iteraciones cortas (sprints), lo cual fue crucial para el desarrollo de un software con funcionalidades innovadoras.</p>
-            <p><strong>Arquitectura de software:</strong> La aplicación sigue un patrón de diseño <strong>MVC (Modelo-Vista-Controlador)</strong>. Esta arquitectura separa la lógica de la interfaz de usuario, lo que facilita el desarrollo y el mantenimiento del código, permitiendo a los diferentes integrantes del equipo trabajar en partes separadas sin generar conflictos.</p>
-        </section>
+<main>
 
-        <section id="seleccion-metodologia">
-            <h2>2. Selección de Metodología</h2>
-            <div class="punto">
-                <h3>Características Principales de Scrum</h3>
-                <ul>
-                    <li><strong>Sprints:</strong> Ciclos de trabajo de duración fija (usualmente 2-4 semanas).</li>
-                    <li><strong>Roles:</strong> Scrum Master, Product Owner y Equipo de Desarrollo.</li>
-                    <li><strong>Artefactos:</strong> Product Backlog, Sprint Backlog e Incremento del producto.</li>
-                </ul>
-            </div>
-            <div class="punto">
-                <h3>¿Cuándo usar Scrum?</h3>
-                <p>Es ideal para proyectos con requisitos cambiantes o para equipos que necesitan un alto grado de flexibilidad. Para un software de punto de venta inteligente, esto es clave ya que las funcionalidades pueden evolucionar rápidamente según las necesidades del mercado y el feedback de los clientes.</p>
-            </div>
-            <div class="punto">
-                <h3>Diagrama de Scrum</h3>
-                <img src="assets/Diagrama_Scrum.png" alt="Diagrama del flujo de trabajo de Scrum" style="max-width: 100%;">
-            </div>
-            <div class="punto">
-                <h3>Ejemplos de Software</h3>
-                <p>Empresas como Square y Shopify utilizan principios ágiles para el desarrollo de sus plataformas de punto de venta, actualizando constantemente sus funcionalidades para mantenerse competitivas.</p>
-            </div>
-        </section>
+    <!-- Secciones originales -->
+    <section id="metodologias">
+        <h2>1. Metodologías Ágiles</h2>
+        <p><strong>Investigación y justificación:</strong> Para este proyecto, hemos utilizado <strong>Scrum</strong>, una metodología ágil que nos permitió adaptarnos a los cambios y entregar valor de forma continua. A diferencia de otras metodologías, Scrum se enfoca en la gestión del proyecto a través de iteraciones cortas (sprints), lo cual fue crucial para el desarrollo de un software con funcionalidades innovadoras.</p>
+        <p><strong>Arquitectura de software:</strong> La aplicación sigue un patrón de diseño <strong>MVC (Modelo-Vista-Controlador)</strong>. Esta arquitectura separa la lógica de la interfaz de usuario, facilitando el desarrollo y mantenimiento del código.</p>
+    </section>
 
-        <hr>
+    <section id="seleccion-metodologia">
+        <h2>2. Selección de Metodología</h2>
+        <div class="punto">
+            <h3>Características Principales de Scrum</h3>
+            <ul>
+                <li><strong>Sprints:</strong> Ciclos de trabajo de duración fija (2-4 semanas).</li>
+                <li><strong>Roles:</strong> Scrum Master, Product Owner y Equipo de Desarrollo.</li>
+                <li><strong>Artefactos:</strong> Product Backlog, Sprint Backlog e Incremento del producto.</li>
+            </ul>
+        </div>
+        <div class="punto">
+            <h3>¿Cuándo usar Scrum?</h3>
+            <p>Ideal para proyectos con requisitos cambiantes. Para un software de punto de venta inteligente, esto es clave, ya que las funcionalidades evolucionan según las necesidades del mercado.</p>
+        </div>
+        <div class="punto">
+            <h3>Diagrama de Scrum</h3>
+            <img src="assets/Diagrama_Scrum.png" alt="Diagrama del flujo de trabajo de Scrum" class="captura">
+        </div>
+    </section>
 
-        <section id="plan-desarrollo">
-            <h2>3. Plan de Desarrollo del Proyecto "InteliPOS"</h2>
-            <div class="punto">
-                <h3>Nombre del Proyecto:</h3> <p><strong>InteliPOS - Punto de Venta Inteligente</strong></p>
-                <h3>Visión del Proyecto:</h3> <p>La visión de este proyecto es crear una solución de software de punto de venta que, a través de la integración de análisis de datos e inteligencia de negocio, optimice las operaciones diarias e impulse el crecimiento estratégico de los negocios minoristas.</p>
-                <h3>Roles del Equipo:</h3>
-                <ul>
-                    <li><strong>Product Owner:</strong> Eduardo Zapatero</li>
-                    <li><strong>Scrum Master:</strong> Gerardo Hernandez</li>
-                    <li><strong>Scrum Team:</strong> Brayan Gonzales y Fernando Martinez</li>
-                </ul>
-            </div>
-            <div class="punto">
-                <h3>Planificación por Sprints</h3>
-                <p>El proyecto se dividió en **3 sprints** de dos semanas cada uno, con el objetivo de entregar un incremento de producto funcional al final de cada ciclo.</p>
-                
-                <h4>Sprint 1: Módulo de Venta y Autenticación (2 semanas)</h4>
-                <ul>
-                    <li><strong>Objetivo:</strong> Crear el módulo central de venta y el sistema de autenticación de usuarios.</li>
-                    <li><strong>Historias de Usuario:</strong>
-                        <ul>
-                            <li>Como vendedor, quiero poder iniciar sesión en el sistema para acceder a mi terminal de venta.</li>
-                            <li>Como vendedor, quiero registrar una venta escaneando un código de barras.</li>
-                            <li>Como administrador, quiero gestionar los permisos de los usuarios del sistema.</li>
-                        </ul>
-                    </li>
-                </ul>
-        
-                <h4>Sprint 2: Gestión de Inventario e Inteligencia (2 semanas)</h4>
-                <ul>
-                    <li><strong>Objetivo:</strong> Implementar la gestión de inventario inteligente y los primeros reportes de análisis.</li>
-                    <li><strong>Historias de Usuario:</strong>
-                        <ul>
-                            <li>Como gerente, quiero ver el inventario en tiempo real para saber qué productos están disponibles.</li>
-                            <li>Como gerente, quiero recibir una alerta cuando el stock de un producto esté bajo.</li>
-                            <li>Como analista, quiero ver un reporte de las ventas por categoría para identificar los productos más populares.</li>
-                        </ul>
-                    </li>
-                </ul>
-        
-                <h4>Sprint 3: Reportes Avanzados y Mantenimiento (2 semanas)</h4>
-                <ul>
-                    <li><strong>Objetivo:</strong> Añadir funcionalidades de análisis predictivo y preparar la aplicación para el lanzamiento.</li>
-                    <li><strong>Historias de Usuario:</strong>
-                        <ul>
-                            <li>Como gerente, quiero ver un reporte de predicción de ventas para planificar el próximo pedido.</li>
-                            <li>Como gerente, quiero recibir sugerencias de productos para exhibir juntos y aumentar las ventas.</li>
-                            <li>Como administrador, quiero generar reportes de cierre de caja precisos al final del día.</li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-            <div class="punto">
-                <h3>Tecnologías y Estrategias</h3>
-                <ul>
-                    <li><strong>Justificación de la Metodología:</strong> Scrum permitió a nuestro equipo gestionar los cambios en las funcionalidades de la aplicación de manera eficiente en cada sprint, asegurando que cada integrante del equipo supiera exactamente qué tareas debía completar.</li>
-                    <li><strong>Arquitectura del Sistema:</strong> El software está construido sobre una arquitectura <strong>basada en la nube</strong>, lo que garantiza su accesibilidad y seguridad.</li>
-                    <li><strong>Estrategias de Versionamiento:</strong> Se gestionó el código con <strong>Git y GitHub</strong>, utilizando ramas para cada nueva funcionalidad y realizando `merges` al finalizar cada sprint.</li>
-                </ul>
-            </div>
-        </section>
+    <hr>
 
-        <section id="funcionalidades">
-            <h2>4. Funcionalidades Clave y Modelo de Negocio</h2>
-            <div class="punto">
-                <h3>Funcionalidades Clave:</h3>
-                <ul>
-                    <li><strong>Módulo Central de Punto de Venta:</strong> Interfaz de venta rápida con soporte para lector de código de barras.</li>
-                    <li><strong>Gestión de Inventario Inteligente:</strong> Incluye predicción de ventas y reabastecimiento automático mediante algoritmos de <strong>aprendizaje automático</strong>.</li>
-                    <li><strong>Reportes y Análisis Avanzados:</strong> Paneles de control personalizables y análisis de rendimiento por producto.</li>
-                    <li><strong>Inteligencia de Negocio:</strong> Algoritmos de recomendación de surtido para aumentar las ventas cruzadas.</li>
-                </ul>
-            </div>
-            <div class="punto">
-                <h3>Modelo de Negocio:</h3>
-                <p>Se propone un modelo de <strong>Suscripción (SaaS)</strong> con planes `Básico`, `Pro` y `Premium` para adaptarse a las necesidades de diferentes tipos de negocios, desde pequeños emprendedores hasta empresas consolidadas.</p>
-            </div>
-            <div class="punto">
-                <h3>Conclusión:</h3>
-                <p>Este proyecto demuestra cómo la integración de metodologías ágiles y tecnologías avanzadas puede dar como resultado una solución de software que no solo es eficiente, sino que también ofrece un valor estratégico y una ventaja competitiva en el mercado.</p>
-            </div>
-        </section>
-        
-    </main>
+    <section id="plan-desarrollo">
+        <h2>3. Plan de Desarrollo del Proyecto "InteliPOS"</h2>
+        <div class="punto">
+            <h3>Nombre del Proyecto:</h3> <p><strong>InteliPOS - Punto de Venta Inteligente</strong></p>
+            <h3>Visión del Proyecto:</h3> <p>Crear una solución de software de punto de venta que optimice operaciones y potencie el crecimiento de negocios minoristas.</p>
+        </div>
+    </section>
 
-    <footer>
-        <p>Autoevaluación: El proyecto cumple con los objetivos principales, demostrando un enfoque sólido en la planificación y la aplicación de metodologías ágiles. - Asistencia: 100%</p>
-        <p>Total: 6 / 6</p>
-    </footer>
+    <section id="funcionalidades">
+        <h2>4. Funcionalidades Clave</h2>
+        <ul>
+            <li>Módulo de Punto de Venta con interfaz rápida y lector de código de barras.</li>
+            <li>Gestión de Inventario Inteligente con predicción de ventas.</li>
+            <li>Reportes y análisis avanzados.</li>
+            <li>Algoritmos de recomendación de productos.</li>
+        </ul>
+    </section>
+
+    <!-- Simulación de Pantallas -->
+    <section id="simulacion-pantallas">
+        <h2>5. Simulación de Pantallas de InteliPOS</h2>
+
+        <div class="flujo">
+            <!-- Login -->
+            <div class="mockup">
+                <div class="titulo-pantalla">Login</div>
+                <label>Usuario:</label>
+                <input type="text" class="campo">
+                <label>Contraseña:</label>
+                <input type="password" class="campo">
+                <a href="#" class="boton">Iniciar sesión</a>
+                <a href="#" class="boton">Olvidé mi contraseña</a>
+            </div>
+
+            <!-- Panel de Ventas -->
+            <div class="mockup">
+                <div class="titulo-pantalla">Panel de Ventas</div>
+                <p>Secciones: Lista de productos, carrito de ventas, total</p>
+                <a href="#" class="boton">Añadir producto</a>
+                <a href="#" class="boton">Eliminar producto</a>
+                <a href="#" class="boton">Finalizar venta</a>
+            </div>
+
+            <!-- Inventario -->
+            <div class="mockup">
+                <div class="titulo-pantalla">Gestión de Inventario</div>
+                <p>Secciones: Lista de productos, stock, alertas</p>
+                <a href="#" class="boton">Añadir producto</a>
+                <a href="#" class="boton">Editar producto</a>
+                <a href="#" class="boton">Generar alerta</a>
+            </div>
+
+            <!-- Reportes -->
+            <div class="mockup">
+                <div class="titulo-pantalla">Reportes y Análisis</div>
+                <p>Gráficas de ventas, predicciones, recomendaciones</p>
+                <a href="#" class="boton">Exportar PDF</a>
+                <a href="#" class="boton">Exportar Excel</a>
+            </div>
+
+            <!-- Configuración -->
+            <div class="mockup">
+                <div class="titulo-pantalla">Configuración</div>
+                <p>Opciones: Usuarios, permisos, preferencias</p>
+                <a href="#" class="boton">Añadir Usuario</a>
+                <a href="#" class="boton">Editar Permisos</a>
+                <a href="#" class="boton">Guardar Cambios</a>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <p>Autoevaluación: El proyecto cumple con los objetivos principales y demuestra un enfoque sólido en planificación y metodologías ágiles. - Asistencia: 100%</p>
+    <p>Total: 6 / 6</p>
+</footer>
 
 </body>
 </html>
