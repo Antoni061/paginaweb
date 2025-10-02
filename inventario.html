@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InteliPOS - Inventario</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f7fa;
+        }
+        
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 260px;
+            height: 100vh;
+            background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            color: white;
+        }
+        
+        .logo-sidebar {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        
+        .nav-menu {
+            list-style: none;
+        }
+        
+        .nav-menu li {
+            margin-bottom: 10px;
+        }
+        
+        .nav-menu a {
+            display: block;
+            padding: 12px 15px;
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            transition: background 0.3s;
+        }
+        
+        .nav-menu a:hover {
+            background: rgba(255,255,255,0.2);
+        }
+        
+        .nav-menu a.active {
+            background: rgba(255,255,255,0.3);
+            font-weight: 600;
+        }
+        
+        .main-content {
+            margin-left: 260px;
+            padding: 30px;
+        }
+        
+        .top-bar {
+            background: white;
+            padding: 20px 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .top-bar h1 {
+            color: #333;
+            font-size: 1.8rem;
+        }
+        
+        .btn-add {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 10px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        
+        .btn-add:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102,126,234,0.4);
+        }
+        
+        .filters {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .filter-input {
+            flex: 1;
+            min-width: 200px;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 1rem;
+        }
+        
+        .filter-select {
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 1rem;
+            min-width: 150px;
+        }
+        
+        .inventory-table {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        thead {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        th {
+            padding: 18px;
+            text-align: left;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+        }
+        
+        td {
+            padding: 16px 18px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        tbody tr:hover {
+            background: #f8f9fa;
+        }
+        
+        .status-badge {
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        
+        .status-ok {
+            background: #e8f5e9;
+            color: #2e7d32;
+        }
+        
+        .status-low {
+            background: #fff3e0;
+            color: #e65100;
+        }
+        
+        .status-critical {
+            background: #ffebee;
+            color: #c62828;
+        }
+        
+        .actions {
+            display: flex;
+            gap: 8px;
+        }
+        
+        .btn-icon {
+            padding: 8px 12px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+        
+        .btn-edit {
+            background: #2196F3;
+            color: white;
+        }
+        
+        .btn-delete {
+            background: #f44336;
+            color: white;
+        }
+        
+        .btn-icon:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+        }
+        
+        .stock-indicator {
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo-sidebar">InteliPOS</div>
+        <ul class="nav-menu">
+            <li><a href="dashboard.html">📊 Dashboard</a></li>
+            <li><a href="venta.html">💰 Punto de Venta</a></li>
+            <li><a href="inventario.html" class="active">📦 Inventario</a></li>
+            <li><a href="reportes.html">📈 Reportes</a></li>
+            <li><a href="login.html">🚪 Cerrar Sesión</a></li>
+        </ul>
+    </div>
+    
+    <div class="main-content">
+        <div class="top-bar">
+            <h1>Gestión de Inventario</h1>
+            <button class="btn-add" onclick="alert('Función de agregar producto')">+ Agregar Producto</button>
+        </div>
+        
+        <div class="filters">
+            <input type="text" class="filter-input" placeholder="🔍 Buscar producto..." id="searchInput">
+            <select class="filter-select" id="categoryFilter">
+                <option value="">Todas las categorías</option>
+                <option value="bebidas">Bebidas</option>
+                <option value="alimentos">Alimentos</option>
+                <option value="lacteos">Lácteos</option>
+                <option value="despensa">Despensa</option>
+            </select>
+            <select class="filter-select" id="statusFilter">
+                <option value="">Todos los estados</option>
+                <option value="ok">Stock Normal</option>
+                <option value="low">Stock Bajo</option>
+                <option value="critical">Stock Crítico</option>
+            </select>
+        </div>
+        
+        <div class="inventory-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Producto</th>
+                        <th>Categoría</th>
+                        <th>Stock</th>
+                        <th>Precio</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="inventoryBody">
+                    <!-- Los datos se cargan dinámicamente -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <script>
+        const inventory = [
+            { id: 'P001', name: 'Coca Cola', category: 'bebidas', stock: 85, minStock: 20, price: 25 },
+            { id: 'P002', name: 'Pan Blanco', category: 'alimentos', stock: 42, minStock: 30, price: 35 },
+            { id: 'P003', name: 'Leche', category: 'lacteos', stock: 15, minStock: 25, price: 42 },
+            { id: 'P004', name: 'Huevos', category: 'alimentos', stock: 68, minStock: 20, price: 58 },
+            { id: 'P005', name: 'Manzanas', category: 'alimentos', stock: 5, minStock: 15, price: 48 },
+            { id: 'P006', name: 'Café', category: 'despensa', stock: 32, minStock: 10, price: 85 },
+            { id: 'P007', name: 'Arroz', category: 'despensa', stock: 95, minStock: 30, price: 32 },
+            { id: 'P008', name: 'Azúcar', category: 'despensa', stock: 12, minStock: 20, price: 28 },
+            { id: 'P009', name: 'Galletas', category: 'alimentos', stock: 58, minStock: 25, price: 38 },
+            { id: 'P010', name: 'Agua', category: 'bebidas', stock: 120, minStock: 50, price: 18 },
+            { id: 'P011', name: 'Yogurt', category: 'lacteos', stock: 8, minStock: 15, price: 45 },
+            { id: 'P012', name: 'Cereal', category: 'alimentos', stock: 35, minStock: 20, price: 68 }
+        ];
+        
+        function getStockStatus(stock, minStock) {
+            if (stock <= minStock * 0.5) return 'critical';
+            if (stock <= minStock) return 'low';
+            return 'ok';
+        }
+        
+        function getStatusLabel(status) {
+            const labels = {
+                'ok': 'Stock Normal',
+                'low': 'Stock Bajo',
+                'critical': 'Stock Crítico'
+            };
+            return labels[status];
+        }
+        
+        function renderInventory(items = inventory) {
+            const tbody = document.getElementById('inventoryBody');
+            tbody.innerHTML = items.map(item => {
+                const status = getStockStatus(item.stock, item.minStock);
+                return `
+                    <tr>
+                        <td><strong>${item.id}</strong></td>
+                        <td>${item.name}</td>
+                        <td style="text-transform: capitalize;">${item.category}</td>
+                        <td class="stock-indicator" style="color: ${status === 'critical' ? '#c62828' : status === 'low' ? '#e65100' : '#2e7d32'}">${item.stock}</td>
+                        <td>$${item.price}</td>
+                        <td><span class="status-badge status-${status}">${getStatusLabel(status)}</span></td>
+                        <td>
+                            <div class="actions">
+                                <button class="btn-icon btn-edit" onclick="editProduct('${item.id}')">✏️</button>
+                                <button class="btn-icon btn-delete" onclick="deleteProduct('${item.id}')">🗑️</button>
+                            </div>
+                        </td>
+                    </tr>
+                `;
+            }).join('');
+        }
+        
+        function editProduct(id) {
+            alert(`Editar producto: ${id}`);
+        }
+        
+        function deleteProduct(id) {
+            if (confirm(`¿Estás seguro de eliminar el producto ${id}?`)) {
+                alert(`Producto ${id} eliminado`);
+            }
+        }
+        
+        document.getElementById('searchInput').addEventListener('input', filterInventory);
+        document.getElementById('categoryFilter').addEventListener('change', filterInventory);
+        document.getElementById('statusFilter').addEventListener('change', filterInventory);
+        
+        function filterInventory() {
+            const search = document.getElementById('searchInput').value.toLowerCase();
+            const category = document.getElementById('categoryFilter').value;
+            const status = document.getElementById('statusFilter').value;
+            
+            const filtered = inventory.filter(item => {
+                const matchSearch = item.name.toLowerCase().includes(search) || item.id.toLowerCase().includes(search);
+                const matchCategory = !category || item.category === category;
+                const matchStatus = !status || getStockStatus(item.stock, item.minStock) === status;
+                return matchSearch && matchCategory && matchStatus;
+            });
+            
+            renderInventory(filtered);
+        }
+        
+        renderInventory();
+    </script>
+</body>
+</html>
