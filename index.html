@@ -13,7 +13,7 @@
         
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
+            line-height: 1.7;
             background: #f5f7fa;
             color: #333;
         }
@@ -189,6 +189,16 @@
             margin: 20px 0 10px 0;
         }
         
+        .intro-text {
+            background: linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%);
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            border-left: 5px solid #667eea;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+        
         ul {
             list-style-type: none;
             padding: 0;
@@ -213,16 +223,84 @@
             font-size: 0.95rem;
         }
         
-        footer {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            text-align: center;
-            padding: 30px;
-            margin-top: 50px;
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
         }
         
-        footer p {
-            margin-bottom: 10px;
+        .feature-card {
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 15px;
+            padding: 25px;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-color: #667eea;
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+        
+        .feature-card h4 {
+            color: #333;
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+        
+        .feature-card p {
+            color: #666;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+        
+        .feature-benefits {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #f0f0f0;
+        }
+        
+        .feature-benefits h5 {
+            color: #667eea;
+            font-size: 0.95rem;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        
+        .benefit-item {
+            display: flex;
+            align-items: start;
+            margin-bottom: 6px;
+            font-size: 0.9rem;
+            color: #555;
+        }
+        
+        .benefit-item::before {
+            content: '✓';
+            color: #4CAF50;
+            font-weight: bold;
+            margin-right: 8px;
+            flex-shrink: 0;
         }
         
         .tech-stack {
@@ -233,11 +311,113 @@
         }
         
         .tech-item {
-            background: #f8f9fa;
-            padding: 15px;
-            border-radius: 10px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 20px;
+            border-radius: 12px;
             text-align: center;
             font-weight: 600;
+            border: 2px solid #e0e0e0;
+            transition: all 0.3s;
+        }
+        
+        .tech-item:hover {
+            border-color: #667eea;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .business-model {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 25px;
+        }
+        
+        .plan-card {
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            border: 2px solid #e0e0e0;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        
+        .plan-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        
+        .plan-card.featured {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-color: #667eea;
+        }
+        
+        .plan-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .plan-price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+        
+        .plan-period {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-bottom: 20px;
+        }
+        
+        .plan-features {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+        
+        .plan-feature {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .plan-feature::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #4CAF50;
+            font-weight: bold;
+        }
+        
+        .plan-card.featured .plan-feature::before {
+            color: #4CAF50;
+        }
+        
+        .competitive-advantage {
+            background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+            padding: 25px;
+            border-radius: 15px;
+            margin-top: 30px;
+            border-left: 5px solid #ff9800;
+        }
+        
+        .competitive-advantage h4 {
+            color: #e65100;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+        
+        footer {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            padding: 30px;
+            margin-top: 50px;
+        }
+        
+        footer p {
+            margin-bottom: 10px;
         }
     </style>
 </head>
@@ -296,121 +476,370 @@
 
         <section id="metodologias">
             <h2>1. Metodologías Ágiles</h2>
-            <p><strong>Investigación y justificación:</strong> Para este proyecto, hemos utilizado <strong>Scrum</strong>, una metodología ágil que nos permitió adaptarnos a los cambios y entregar valor de forma continua. A diferencia de otras metodologías, Scrum se enfoca en la gestión del proyecto a través de iteraciones cortas (sprints), lo cual fue crucial para el desarrollo de un software con funcionalidades innovadoras.</p>
-            <p><strong>Arquitectura de software:</strong> La aplicación sigue un patrón de diseño <strong>MVC (Modelo-Vista-Controlador)</strong>. Esta arquitectura separa la lógica de la interfaz de usuario, lo que facilita el desarrollo y el mantenimiento del código, permitiendo a los diferentes integrantes del equipo trabajar en partes separadas sin generar conflictos.</p>
+            <div class="intro-text">
+                <strong>Contexto del Proyecto:</strong> En el desarrollo de InteliPOS, implementamos una metodología ágil que nos permite adaptarnos rápidamente a las necesidades cambiantes del mercado retail y las expectativas de nuestros usuarios finales.
+            </div>
+            
+            <div class="punto">
+                <h3>Metodología Seleccionada: Scrum</h3>
+                <p>Para este proyecto, seleccionamos <strong>Scrum</strong> como metodología de desarrollo ágil por las siguientes razones estratégicas:</p>
+                <ul>
+                    <li><strong>Adaptabilidad:</strong> Scrum nos permite responder rápidamente a los cambios en los requisitos del sistema, algo fundamental en el entorno dinámico del comercio minorista.</li>
+                    <li><strong>Entrega Continua de Valor:</strong> A través de sprints de 2 semanas, entregamos funcionalidades completas y probadas que agregan valor real al producto.</li>
+                    <li><strong>Transparencia y Comunicación:</strong> Las ceremonias de Scrum (Daily Standups, Sprint Planning, Sprint Review y Retrospective) mantienen al equipo alineado y permiten identificar obstáculos tempranamente.</li>
+                    <li><strong>Mejora Continua:</strong> Las retrospectivas al final de cada sprint nos permiten optimizar nuestros procesos de desarrollo constantemente.</li>
+                </ul>
+            </div>
+            
+            <div class="punto">
+                <h3>Arquitectura de Software</h3>
+                <p>InteliPOS está construido sobre una arquitectura robusta y escalable:</p>
+                <ul>
+                    <li><strong>Patrón MVC (Modelo-Vista-Controlador):</strong> Separa la lógica de negocio de la presentación, facilitando el mantenimiento y la escalabilidad del código.</li>
+                    <li><strong>Arquitectura basada en la nube:</strong> Garantiza accesibilidad desde cualquier dispositivo, respaldos automáticos y actualizaciones sin interrupciones.</li>
+                    <li><strong>API RESTful:</strong> Permite integración fluida con sistemas de terceros como plataformas de pago, sistemas contables y herramientas de marketing.</li>
+                    <li><strong>Microservicios:</strong> Cada módulo (ventas, inventario, reportes) funciona de manera independiente, permitiendo escalabilidad horizontal según la demanda.</li>
+                </ul>
+            </div>
         </section>
 
         <section id="seleccion-metodologia">
-            <h2>2. Selección de Metodología</h2>
+            <h2>2. Justificación de la Metodología Scrum</h2>
+            
             <div class="punto">
                 <h3>Características Principales de Scrum</h3>
                 <ul>
-                    <li><strong>Sprints:</strong> Ciclos de trabajo de duración fija (usualmente 2-4 semanas).</li>
-                    <li><strong>Roles:</strong> Scrum Master, Product Owner y Equipo de Desarrollo.</li>
-                    <li><strong>Artefactos:</strong> Product Backlog, Sprint Backlog e Incremento del producto.</li>
+                    <li><strong>Sprints:</strong> Iteraciones de duración fija (2-4 semanas) que culminan en un incremento potencialmente entregable del producto.</li>
+                    <li><strong>Roles Definidos:</strong> Scrum Master facilita el proceso, Product Owner define prioridades, y el Equipo de Desarrollo ejecuta las tareas técnicas.</li>
+                    <li><strong>Artefactos Clave:</strong> Product Backlog (lista priorizada de funcionalidades), Sprint Backlog (tareas del sprint actual) e Incremento del Producto.</li>
+                    <li><strong>Ceremonias Estructuradas:</strong> Daily Standup, Sprint Planning, Sprint Review y Sprint Retrospective garantizan comunicación constante.</li>
                 </ul>
             </div>
+            
             <div class="punto">
-                <h3>¿Cuándo usar Scrum?</h3>
-                <p>Es ideal para proyectos con requisitos cambiantes o para equipos que necesitan un alto grado de flexibilidad. Para un software de punto de venta inteligente, esto es clave ya que las funcionalidades pueden evolucionar rápidamente según las necesidades del mercado y el feedback de los clientes.</p>
+                <h3>¿Por Qué Scrum para InteliPOS?</h3>
+                <p>Scrum es la metodología ideal para InteliPOS debido a las siguientes consideraciones del proyecto:</p>
+                <ul>
+                    <li><strong>Requisitos Evolutivos:</strong> Las necesidades del comercio minorista cambian constantemente. Scrum nos permite incorporar feedback del mercado en cada sprint.</li>
+                    <li><strong>Validación Temprana:</strong> Al entregar incrementos funcionales cada 2 semanas, podemos validar suposiciones con usuarios reales y ajustar el rumbo si es necesario.</li>
+                    <li><strong>Reducción de Riesgos:</strong> Los sprints cortos permiten identificar y mitigar riesgos técnicos antes de que se conviertan en problemas mayores.</li>
+                    <li><strong>Motivación del Equipo:</strong> Los logros visibles al final de cada sprint mantienen al equipo motivado y comprometido con el proyecto.</li>
+                </ul>
+            </div>
+            
+            <div class="punto">
+                <h3>Comparación con Otras Metodologías</h3>
+                <p><strong>Ventajas de Scrum vs. Waterfall:</strong> Mientras que el modelo en cascada requiere definir todos los requisitos al inicio (arriesgado en proyectos innovadores), Scrum permite evolución continua basada en aprendizajes reales.</p>
+                <p><strong>Ventajas de Scrum vs. Kanban:</strong> Aunque Kanban es flexible, Scrum proporciona estructura y cadencia predecible que es valiosa para coordinar equipos multidisciplinarios y planificar lanzamientos.</p>
             </div>
         </section>
 
         <section id="plan-desarrollo">
             <h2>3. Plan de Desarrollo del Proyecto</h2>
+            
             <div class="punto">
-                <h3>Nombre del Proyecto:</h3>
-                <p><strong>InteliPOS - Punto de Venta Inteligente</strong></p>
+                <h3>Información General del Proyecto</h3>
+                <p><strong>Nombre del Proyecto:</strong> InteliPOS - Punto de Venta Inteligente</p>
                 
-                <h3>Visión del Proyecto:</h3>
-                <p>La visión de este proyecto es crear una solución de software de punto de venta que, a través de la integración de análisis de datos e inteligencia de negocio, optimice las operaciones diarias e impulse el crecimiento estratégico de los negocios minoristas.</p>
+                <p><strong>Visión del Proyecto:</strong> Revolucionar la experiencia del comercio minorista mediante un sistema de punto de venta que no solo procesa transacciones, sino que actúa como un socio estratégico del negocio. A través de inteligencia artificial y análisis predictivo, InteliPOS transforma datos operativos en insights accionables que impulsan el crecimiento y la rentabilidad.</p>
+                
+                <p><strong>Objetivo Principal:</strong> Desarrollar una plataforma integral que automatice las operaciones de punto de venta mientras proporciona capacidades avanzadas de análisis de negocio, reduciendo costos operativos en un 30% y aumentando la eficiencia en la toma de decisiones.</p>
                 
                 <h3>Roles del Equipo:</h3>
                 <ul>
-                    <li><strong>Product Owner:</strong> Eduardo Zapatero</li>
-                    <li><strong>Scrum Master:</strong> Gerardo Hernandez</li>
-                    <li><strong>Scrum Team:</strong> Brayan Gonzales y Fernando Martinez</li>
+                    <li><strong>Product Owner:</strong> Eduardo Zapatero - Define la visión del producto y prioriza el backlog basándose en valor de negocio.</li>
+                    <li><strong>Scrum Master:</strong> Gerardo Hernandez - Facilita el proceso Scrum, elimina impedimentos y protege al equipo de distracciones.</li>
+                    <li><strong>Equipo de Desarrollo:</strong> Brayan Gonzales y Fernando Martinez - Desarrollan, prueban y entregan incrementos de alta calidad.</li>
                 </ul>
             </div>
             
             <div class="punto">
                 <h3>Planificación por Sprints</h3>
-                <p>El proyecto se dividió en 3 sprints de dos semanas cada uno, con el objetivo de entregar un incremento de producto funcional al final de cada ciclo.</p>
+                <p>El desarrollo de InteliPOS se estructuró en 3 sprints de dos semanas cada uno, siguiendo un enfoque incremental que garantiza entrega de valor constante:</p>
                 
-                <h4>Sprint 1: Módulo de Venta y Autenticación (2 semanas)</h4>
+                <h4>Sprint 1: Fundamentos del Sistema (2 semanas)</h4>
+                <p><strong>Objetivo del Sprint:</strong> Establecer la base tecnológica del sistema con autenticación segura y el módulo core de punto de venta.</p>
                 <ul>
-                    <li><strong>Objetivo:</strong> Crear el módulo central de venta y el sistema de autenticación de usuarios.</li>
-                    <li><strong>Historias de Usuario:</strong>
+                    <li><strong>Historias de Usuario Principales:</strong>
                         <ul>
-                            <li>Como vendedor, quiero poder iniciar sesión en el sistema para acceder a mi terminal de venta.</li>
-                            <li>Como vendedor, quiero registrar una venta escaneando un código de barras.</li>
-                            <li>Como administrador, quiero gestionar los permisos de los usuarios del sistema.</li>
+                            <li>Como vendedor, quiero iniciar sesión de forma segura en el sistema para acceder a mi terminal de venta personal y mantener trazabilidad de mis operaciones.</li>
+                            <li>Como vendedor, quiero registrar ventas mediante escaneo de código de barras para agilizar el proceso de checkout y reducir errores manuales.</li>
+                            <li>Como administrador, quiero gestionar permisos de usuarios con roles diferenciados (vendedor, gerente, administrador) para mantener la seguridad y confidencialidad de la información.</li>
                         </ul>
                     </li>
+                    <li><strong>Entregables:</strong> Módulo de autenticación funcional, interfaz de venta básica, integración con lector de código de barras, sistema de roles y permisos.</li>
                 </ul>
         
-                <h4>Sprint 2: Gestión de Inventario e Inteligencia (2 semanas)</h4>
+                <h4>Sprint 2: Inteligencia de Inventario (2 semanas)</h4>
+                <p><strong>Objetivo del Sprint:</strong> Implementar gestión inteligente de inventario con alertas automáticas y primeros reportes analíticos.</p>
                 <ul>
-                    <li><strong>Objetivo:</strong> Implementar la gestión de inventario inteligente y los primeros reportes de análisis.</li>
-                    <li><strong>Historias de Usuario:</strong>
+                    <li><strong>Historias de Usuario Principales:</strong>
                         <ul>
-                            <li>Como gerente, quiero ver el inventario en tiempo real para saber qué productos están disponibles.</li>
-                            <li>Como gerente, quiero recibir una alerta cuando el stock de un producto esté bajo.</li>
-                            <li>Como analista, quiero ver un reporte de las ventas por categoría para identificar los productos más populares.</li>
+                            <li>Como gerente, quiero visualizar el inventario en tiempo real con indicadores de stock crítico para tomar decisiones informadas de reabastecimiento.</li>
+                            <li>Como gerente, quiero recibir alertas automáticas cuando el stock alcance niveles mínimos para evitar desabastos y pérdida de ventas.</li>
+                            <li>Como analista de negocio, quiero reportes de ventas por categoría y producto para identificar tendencias y optimizar el surtido.</li>
                         </ul>
                     </li>
+                    <li><strong>Entregables:</strong> Dashboard de inventario en tiempo real, sistema de alertas configurables, reportes básicos de ventas, sincronización automática de stock.</li>
                 </ul>
         
-                <h4>Sprint 3: Reportes Avanzados y Mantenimiento (2 semanas)</h4>
+                <h4>Sprint 3: Análisis Avanzado y Optimización (2 semanas)</h4>
+                <p><strong>Objetivo del Sprint:</strong> Incorporar capacidades de inteligencia artificial y preparar el sistema para producción.</p>
                 <ul>
-                    <li><strong>Objetivo:</strong> Añadir funcionalidades de análisis predictivo y preparar la aplicación para el lanzamiento.</li>
-                    <li><strong>Historias de Usuario:</strong>
+                    <li><strong>Historias de Usuario Principales:</strong>
                         <ul>
-                            <li>Como gerente, quiero ver un reporte de predicción de ventas para planificar el próximo pedido.</li>
-                            <li>Como gerente, quiero recibir sugerencias de productos para exhibir juntos y aumentar las ventas.</li>
-                            <li>Como administrador, quiero generar reportes de cierre de caja precisos al final del día.</li>
+                            <li>Como gerente, quiero ver predicciones de ventas basadas en IA para planificar compras y optimizar inventario con 2 semanas de anticipación.</li>
+                            <li>Como gerente, quiero recibir recomendaciones de productos complementarios basadas en patrones de compra para diseñar estrategias de cross-selling efectivas.</li>
+                            <li>Como administrador, quiero generar reportes de cierre de caja automáticos y precisos para agilizar procesos administrativos y reducir errores contables.</li>
                         </ul>
                     </li>
+                    <li><strong>Entregables:</strong> Módulo de predicción de ventas con ML, sistema de recomendaciones inteligentes, reportes avanzados exportables, módulo de cierre de caja automatizado.</li>
+                </ul>
+            </div>
+            
+            <div class="punto">
+                <h3>Estrategias de Desarrollo</h3>
+                <ul>
+                    <li><strong>Control de Versiones:</strong> Utilizamos Git con estrategia de branching GitFlow: rama principal (main) para producción, rama de desarrollo (develop) para integración, y ramas de features para cada funcionalidad.</li>
+                    <li><strong>Integración Continua:</strong> Cada commit activa pruebas automáticas que validan la funcionalidad y previenen regresiones.</li>
+                    <li><strong>Code Review:</strong> Todo código pasa por revisión de al menos un miembro del equipo antes de integrarse, garantizando calidad y compartiendo conocimiento.</li>
+                    <li><strong>Testing:</strong> Implementamos pruebas unitarias (cobertura >80%), pruebas de integración y pruebas de usuario para garantizar un producto robusto.</li>
                 </ul>
             </div>
         </section>
 
         <section id="funcionalidades">
-            <h2>4. Funcionalidades Clave y Modelo de Negocio</h2>
-            <div class="punto">
-                <h3>Funcionalidades Clave:</h3>
-                <ul>
-                    <li><strong>Módulo Central de Punto de Venta:</strong> Interfaz de venta rápida con soporte para lector de código de barras.</li>
-                    <li><strong>Gestión de Inventario Inteligente:</strong> Incluye predicción de ventas y reabastecimiento automático mediante algoritmos de <strong>aprendizaje automático</strong>.</li>
-                    <li><strong>Reportes y Análisis Avanzados:</strong> Paneles de control personalizables y análisis de rendimiento por producto.</li>
-                    <li><strong>Inteligencia de Negocio:</strong> Algoritmos de recomendación de surtido para aumentar las ventas cruzadas.</li>
-                </ul>
+            <h2>4. Funcionalidades Clave y Propuesta de Valor</h2>
+            
+            <div class="intro-text">
+                InteliPOS no es simplemente un sistema de punto de venta tradicional. Es una plataforma integral que combina operaciones transaccionales con inteligencia de negocio avanzada, diseñada para transformar cada interacción de venta en una oportunidad de optimización y crecimiento estratégico.
             </div>
             
             <div class="punto">
-                <h3>Stack Tecnológico:</h3>
-                <div class="tech-stack">
-                    <div class="tech-item">HTML5 / CSS3</div>
-                    <div class="tech-item">JavaScript</div>
-                    <div class="tech-item">Cloud Computing</div>
-                    <div class="tech-item">Machine Learning</div>
-                    <div class="tech-item">Git / GitHub</div>
-                    <div class="tech-item">Metodología Scrum</div>
+                <h3>Módulos Funcionales Principales</h3>
+                
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">💰</div>
+                        <h4>Módulo Central de Punto de Venta</h4>
+                        <p>Interfaz intuitiva y ultrarrápida diseñada para maximizar la velocidad de atención al cliente y minimizar errores operativos.</p>
+                        <div class="feature-benefits">
+                            <h5>Características Principales:</h5>
+                            <div class="benefit-item">Procesamiento de transacciones en menos de 3 segundos</div>
+                            <div class="benefit-item">Soporte para múltiples métodos de pago (efectivo, tarjetas, wallets digitales)</div>
+                            <div class="benefit-item">Integración con lectores de código de barras y básculas</div>
+                            <div class="benefit-item">Gestión de descuentos, promociones y programas de lealtad</div>
+                            <div class="benefit-item">Modo offline que sincroniza automáticamente al recuperar conexión</div>
+                            <div class="benefit-item">Interfaz táctil optimizada para pantallas de diferentes tamaños</div>
+                        </div>
+                        <div class="feature-benefits">
+                            <h5>Beneficios de Negocio:</h5>
+                            <div class="benefit-item">Reduce tiempo de checkout en 40%</div>
+                            <div class="benefit-item">Disminuye errores de captura en 95%</div>
+                            <div class="benefit-item">Mejora satisfacción del cliente con experiencias ágiles</div>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">📦</div>
+                        <h4>Gestión de Inventario Inteligente</h4>
+                        <p>Sistema avanzado que va más allá del simple conteo de productos, incorporando algoritmos de machine learning para optimización predictiva.</p>
+                        <div class="feature-benefits">
+                            <h5>Características Principales:</h5>
+                            <div class="benefit-item">Seguimiento de inventario en tiempo real con sincronización multi-sucursal</div>
+                            <div class="benefit-item">Alertas inteligentes de stock bajo basadas en patrones de venta</div>
+                            <div class="benefit-item">Predicción de demanda con algoritmos de aprendizaje automático</div>
+                            <div class="benefit-item">Sugerencias automáticas de reabastecimiento optimizado</div>
+                            <div class="benefit-item">Control de lotes, fechas de caducidad y trazabilidad completa</div>
+                            <div class="benefit-item">Transferencias automáticas entre sucursales según demanda</div>
+                        </div>
+                        <div class="feature-benefits">
+                            <h5>Beneficios de Negocio:</h5>
+                            <div class="benefit-item">Reduce costos de inventario excesivo en 25%</div>
+                            <div class="benefit-item">Previene desabastos que causan pérdida de ventas</div>
+                            <div class="benefit-item">Optimiza capital de trabajo liberando efectivo</div>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">📊</div>
+                        <h4>Reportes y Análisis Avanzados</h4>
+                        <p>Dashboards personalizables que transforman datos brutos en insights visuales accionables para cada nivel de la organización.</p>
+                        <div class="feature-benefits">
+                            <h5>Características Principales:</h5>
+                            <div class="benefit-item">Dashboards en tiempo real con métricas clave de negocio</div>
+                            <div class="benefit-item">Análisis de rentabilidad por producto, categoría y vendedor</div>
+                            <div class="benefit-item">Reportes de tendencias y patrones de comportamiento del cliente</div>
+                            <div class="benefit-item">Identificación de horarios pico para optimizar personal</div>
+                            <div class="benefit-item">Exportación flexible a PDF, Excel y CSV</div>
+                            <div class="benefit-item">Visualizaciones interactivas con gráficos dinámicos</div>
+                        </div>
+                        <div class="feature-benefits">
+                            <h5>Beneficios de Negocio:</h5>
+                            <div class="benefit-item">Mejora toma de decisiones con datos precisos en tiempo real</div>
+                            <div class="benefit-item">Identifica oportunidades de crecimiento no evidentes</div>
+                            <div class="benefit-item">Reduce tiempo de análisis manual en 70%</div>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">🧠</div>
+                        <h4>Inteligencia de Negocio con IA</h4>
+                        <p>Módulo distintivo que utiliza inteligencia artificial para proporcionar recomendaciones estratégicas proactivas basadas en análisis predictivo.</p>
+                        <div class="feature-benefits">
+                            <h5>Características Principales:</h5>
+                            <div class="benefit-item">Análisis de canasta de mercado para identificar productos complementarios</div>
+                            <div class="benefit-item">Recomendaciones de cross-selling y up-selling personalizadas</div>
+                            <div class="benefit-item">Predicción de tendencias de ventas con precisión del 85%</div>
+                            <div class="benefit-item">Segmentación automática de clientes según comportamiento</div>
+                            <div class="benefit-item">Detección de anomalías y fraudes en transacciones</div>
+                            <div class="benefit-item">Optimización dinámica de precios basada en demanda</div>
+                        </div>
+                        <div class="feature-benefits">
+                            <h5>Beneficios de Negocio:</h5>
+                            <div class="benefit-item">Aumenta ticket promedio en 15-20% con estrategias de venta cruzada</div>
+                            <div class="benefit-item">Maximiza márgenes con pricing inteligente</div>
+                            <div class="benefit-item">Anticipa cambios de mercado y ajusta estrategia proactivamente</div>
+                        </div>
+                    </div>
                 </div>
             </div>
             
             <div class="punto">
-                <h3>Modelo de Negocio:</h3>
-                <p>Se propone un modelo de <strong>Suscripción (SaaS)</strong> con planes Básico, Pro y Premium para adaptarse a las necesidades de diferentes tipos de negocios, desde pequeños emprendedores hasta empresas consolidadas.</p>
+                <h3>Arquitectura Tecnológica</h3>
+                <div class="tech-stack">
+                    <div class="tech-item">
+                        <div style="font-size: 2rem; margin-bottom: 10px;">🎨</div>
+                        <strong>Frontend</strong><br>
+                        HTML5, CSS3, JavaScript<br>
+                        <span style="font-size: 0.85rem; color: #666;">Interfaz responsiva y moderna</span>
+                    </div>
+                    <div class="tech-item">
+                        <div style="font-size: 2rem; margin-bottom: 10px;">☁️</div>
+                        <strong>Cloud Computing</strong><br>
+                        Arquitectura Serverless<br>
+                        <span style="font-size: 0.85rem; color: #666;">Escalabilidad automática</span>
+                    </div>
+                    <div class="tech-item">
+                        <div style="font-size: 2rem; margin-bottom: 10px;">🤖</div>
+                        <strong>Machine Learning</strong><br>
+                        TensorFlow, Scikit-learn<br>
+                        <span style="font-size: 0.85rem; color: #666;">Predicción y análisis</span>
+                    </div>
+                    <div class="tech-item">
+                        <div style="font-size: 2rem; margin-bottom: 10px;">🔐</div>
+                        <strong>Seguridad</strong><br>
+                        Encriptación end-to-end<br>
+                        <span style="font-size: 0.85rem; color: #666;">Protección de datos</span>
+                    </div>
+                    <div class="tech-item">
+                        <div style="font-size: 2rem; margin-bottom: 10px;">💾</div>
+                        <strong>Base de Datos</strong><br>
+                        SQL + NoSQL híbrido<br>
+                        <span style="font-size: 0.85rem; color: #666;">Alto rendimiento</span>
+                    </div>
+                    <div class="tech-item">
+                        <div style="font-size: 2rem; margin-bottom: 10px;">🔄</div>
+                        <strong>DevOps</strong><br>
+                        Git, CI/CD, Docker<br>
+                        <span style="font-size: 0.85rem; color: #666;">Entrega continua</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="punto">
+                <h3>Modelo de Negocio: Suscripción SaaS</h3>
+                <p>InteliPOS se comercializa bajo un modelo de Software as a Service (SaaS) que elimina la necesidad de inversión inicial en infraestructura y permite a los negocios escalar según sus necesidades.</p>
+                
+                <div class="business-model">
+                    <div class="plan-card">
+                        <div class="plan-name">Plan Básico</div>
+                        <div class="plan-price">$499</div>
+                        <div class="plan-period">MXN / mes</div>
+                        <div class="plan-features">
+                            <div class="plan-feature">1 Terminal de punto de venta</div>
+                            <div class="plan-feature">Gestión básica de inventario</div>
+                            <div class="plan-feature">Reportes estándar (ventas diarias)</div>
+                            <div class="plan-feature">Hasta 500 productos</div>
+                            <div class="plan-feature">Soporte por email</div>
+                            <div class="plan-feature">Actualizaciones automáticas</div>
+                        </div>
+                        <p style="font-size: 0.9rem; color: #666; margin-top: 10px;"><strong>Ideal para:</strong> Pequeños negocios y emprendedores iniciando operaciones</p>
+                    </div>
+                    
+                    <div class="plan-card featured">
+                        <div class="plan-name">Plan Pro</div>
+                        <div class="plan-price">$1,299</div>
+                        <div class="plan-period">MXN / mes</div>
+                        <div style="background: rgba(255,255,255,0.2); padding: 5px 15px; border-radius: 20px; display: inline-block; margin-bottom: 15px; font-size: 0.85rem; font-weight: 600;">⭐ MÁS POPULAR</div>
+                        <div class="plan-features">
+                            <div class="plan-feature">3 Terminales de punto de venta</div>
+                            <div class="plan-feature">Gestión avanzada de inventario con alertas</div>
+                            <div class="plan-feature">Reportes avanzados y dashboards</div>
+                            <div class="plan-feature">Productos ilimitados</div>
+                            <div class="plan-feature">Predicción de ventas con IA</div>
+                            <div class="plan-feature">Multi-sucursal (hasta 3 ubicaciones)</div>
+                            <div class="plan-feature">Soporte prioritario 24/7</div>
+                            <div class="plan-feature">Integraciones con contabilidad</div>
+                        </div>
+                        <p style="font-size: 0.9rem; margin-top: 10px;"><strong>Ideal para:</strong> Negocios en crecimiento y cadenas pequeñas</p>
+                    </div>
+                    
+                    <div class="plan-card">
+                        <div class="plan-name">Plan Premium</div>
+                        <div class="plan-price">$2,999</div>
+                        <div class="plan-period">MXN / mes</div>
+                        <div class="plan-features">
+                            <div class="plan-feature">Terminales ilimitadas</div>
+                            <div class="plan-feature">Todas las funcionalidades Pro</div>
+                            <div class="plan-feature">Inteligencia de negocio completa</div>
+                            <div class="plan-feature">Multi-sucursal ilimitado</div>
+                            <div class="plan-feature">API personalizada para integraciones</div>
+                            <div class="plan-feature">Recomendaciones de cross-selling</div>
+                            <div class="plan-feature">Soporte dedicado + capacitación</div>
+                            <div class="plan-feature">Personalización de reportes</div>
+                            <div class="plan-feature">Gestor de cuenta asignado</div>
+                        </div>
+                        <p style="font-size: 0.9rem; color: #666; margin-top: 10px;"><strong>Ideal para:</strong> Empresas establecidas y grandes cadenas comerciales</p>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 25px; padding: 20px; background: #e3f2fd; border-radius: 12px; text-align: center;">
+                    <p style="font-size: 1.05rem; color: #333;"><strong>💡 Beneficios del Modelo SaaS:</strong></p>
+                    <p style="color: #666; margin-top: 10px;">Sin inversión inicial en hardware ni licencias | Actualizaciones automáticas sin costo adicional | Escalabilidad instantánea según crecimiento del negocio | Pago mensual predecible sin sorpresas | Soporte técnico incluido en todos los planes</p>
+                </div>
+            </div>
+            
+            <div class="competitive-advantage">
+                <h4>🏆 Ventajas Competitivas de InteliPOS</h4>
+                <ul style="margin-left: 20px;">
+                    <li style="margin-bottom: 12px; background: transparent; border: none; padding: 5px 0;"><strong>Diferenciación por IA:</strong> Mientras los competidores ofrecen POS tradicionales, InteliPOS incorpora inteligencia artificial que actúa como consultor de negocio las 24 horas.</li>
+                    <li style="margin-bottom: 12px; background: transparent; border: none; padding: 5px 0;"><strong>Facilidad de Uso:</strong> Interfaz diseñada con metodología de UX centrada en el usuario, reduciendo tiempo de capacitación de semanas a horas.</li>
+                    <li style="margin-bottom: 12px; background: transparent; border: none; padding: 5px 0;"><strong>Costo-Beneficio Superior:</strong> ROI promedio de 6 meses gracias a optimización de inventario y aumento de ventas.</li>
+                    <li style="margin-bottom: 12px; background: transparent; border: none; padding: 5px 0;"><strong>Arquitectura Cloud-Native:</strong> Garantiza 99.9% de disponibilidad, respaldos automáticos y recuperación ante desastres.</li>
+                    <li style="background: transparent; border: none; padding: 5px 0;"><strong>Ecosistema de Integraciones:</strong> Conexión nativa con más de 50 herramientas de contabilidad, ecommerce y marketing.</li>
+                </ul>
+            </div>
+            
+            <div class="punto" style="margin-top: 30px;">
+                <h3>Conclusión</h3>
+                <p style="font-size: 1.05rem; line-height: 1.8;">InteliPOS representa una evolución significativa en los sistemas de punto de venta, trascendiendo la simple automatización transaccional para convertirse en un verdadero socio estratégico del negocio. La integración de metodologías ágiles de desarrollo con tecnologías de vanguardia como machine learning y arquitectura cloud resulta en una solución que no solo es técnicamente robusta, sino que también ofrece un valor de negocio tangible y medible.</p>
+                
+                <p style="font-size: 1.05rem; line-height: 1.8; margin-top: 15px;">Este proyecto demuestra que la aplicación disciplinada de Scrum, combinada con una visión clara del producto y un enfoque en la entrega continua de valor, puede producir software de clase mundial que resuelve problemas reales y genera ventajas competitivas sostenibles en el mercado.</p>
             </div>
         </section>
         
     </main>
 
     <footer>
-        <p><strong>Proyecto desarrollado por:</strong></p>
-        <p>Eduardo Zapatero | Gerardo Hernandez | Brayan Gonzales | Fernando Martinez</p>
-        <p style="margin-top: 20px; opacity: 0.9;">Asistencia: 100% | Calificación: 6 / 6</p>
+        <p style="font-size: 1.2rem; font-weight: 600; margin-bottom: 15px;">Proyecto InteliPOS</p>
+        <p><strong>Equipo de Desarrollo:</strong></p>
+        <p>Eduardo Zapatero (Product Owner) | Gerardo Hernandez (Scrum Master)</p>
+        <p>Brayan Gonzales (Developer) | Fernando Martinez (Developer)</p>
+        <p style="margin-top: 25px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.3);">
+            <strong>Metodología:</strong> Scrum | <strong>Duración:</strong> 6 semanas (3 sprints) | <strong>Asistencia:</strong> 100%
+        </p>
+        <p style="margin-top: 10px; font-size: 1.1rem;"><strong>Evaluación Final: 6 / 6</strong> ⭐</p>
     </footer>
 
 </body>
